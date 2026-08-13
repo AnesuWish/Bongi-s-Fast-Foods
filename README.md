@@ -2,7 +2,8 @@ A website for Bongi's Fast Foods, that showcases their menu, contact information
 
 Project Title
 
-Bongi's Fast Food Website Student Information
+Bongi's Fast Food Website 
+Student Information
 
 Student Name: Anesuishe
 
