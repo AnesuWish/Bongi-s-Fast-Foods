@@ -53,3 +53,8 @@ Domain name: R120 Website software: R180 per month Shared web hosting: R60 per m
 The project will be stored in a private GitHub repository.
 
 Author Anesuishe Nyandoro
+Reference List
+1.	Haim, I, 2026. How Much Does It Cost to Build a Website in 2026? Element or Blog A Comprehensive Guide, [blog] 29 June. Available at: <https://elementor.com/blog/how-much-does-it-cost-to-build-a-website/> [Accessed 29 July 2026].
+2.	Zillion Designs, 2025. Color Theory in Logo Design: How to Choose Brand Colors That People Remember. Logo Design.net, [blog] 23 June. Available at: <https://www.logodesign.net/blog/color-theory-in-logo-design/> [Accessed 29 July2026].
+
+
