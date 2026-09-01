@@ -28,10 +28,33 @@
         <!-- Contact details list -->
         <ul>
             <li>Phone: +27 11 456 7890</li>
+            <li>WhatsApp: +27 11 456 7890</li>
+            <li>Facebook: <a href="https://www.facebook.com/BongisFastFoods" target="_blank">Bongi's Fast Foods</a></li>
             <li>Email: info@bongisfoods.com</li>
             <li>Address: 21 BassStreet, Boksburg, South Africa</li>
         </ul>
 
+<form action="submit_enquiry.php" method="post">
+            <fieldset>
+                <legend>Place Your Orders</legend>
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="phone">Phone Number:</label><br>
+                <input type="tel" id="phone" name="phone" required><br><br>
+
+                <label for="location">Location:</label><br>
+                <input type="text" id="location" name="location" required><br><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="order"> Order Details:</label><br>
+                <textarea id="order" name="order" rows="4" required></textarea><br><br>
+
+                <input type="submit" value="Submit">
+            </fieldset>
+            </form>
         <!-- Location section with embedded Google map iframe -->
         <h2>Find Our Location</h2>
         <iframe 
