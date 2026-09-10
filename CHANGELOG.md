@@ -27,3 +27,4 @@ All notable changes to this project will be documented in this file.
 - Added external stylesheet style.css
 - Styled header, footer, and navigation bar
 - Added background colors and text colors for all sections
+
