@@ -25,5 +25,11 @@ All notable changes to this project will be documented in this file.
 ### Added
 - Added CSS colors to website (primary, secondary, background)
 - Added external stylesheet style.css
+
+  ## [2026-09-11]
+- Changed colours on CSS to pink, red, black and yellow
+
+## [2026-09-12]
+- Changed a few words and pictures in about.html
 - Styled header, footer, and navigation bar
 - Added background colors and text colors for all sections
