@@ -214,7 +214,7 @@ main li:last-child {
 
 .service-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 20px rgba(215, 38, 56, 0.12);
+    box-shadow: 0 12px 20px rgba(118, 205, 212, 0.12);
 }
 
 .service-card h3 {
