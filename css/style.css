@@ -48,7 +48,7 @@ body {
 
 /* Top header styling with a light warm gradient */
 header {
-    background: linear-gradient(135deg, #fffaf4 0%, #fff0ea 50%, #fef0c9 100%);
+    background: linear-gradient(135deg, #fffaf4 0%, #b8f3ff 42%, #ffb3b3 72%, #fef0c9 100%);
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
