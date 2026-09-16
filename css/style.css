@@ -46,9 +46,9 @@ body {
    Header and Navigation
    ========================= */
 
-/* Top header styling with red, yellow and pink gradient */
+/* Top header styling with a light warm gradient */
 header {
-    background: linear-gradient(135deg, var(--orange) 0%, var(--red) 35%, var(--pink) 68%, #e7a63b 100%);
+    background: linear-gradient(135deg, #fffaf4 0%, #fff0ea 50%, #fef0c9 100%);
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -567,4 +567,26 @@ br {
         width: 100%;
         max-width: 300px;
     }
+}
+/* Make images never overflow on phone */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* --- RESPONSIVE: Phone and Tablet --- */
+@media (max-width: 768px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  header, main, footer {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
 }
