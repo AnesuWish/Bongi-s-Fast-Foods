@@ -9,7 +9,7 @@ Student Name: Anesuishe
 
 Student Number: ST10538765
 
-Programe:DINM
+Programe:Diploma in Network Management
 
 Module: Web Developmnt
 
