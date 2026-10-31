@@ -68,6 +68,7 @@ This website includes a lightbox gallery, validated contact forms, a digital foo
 - Tested all features across different browsers
 - Validated HTML and CSS
 - Deployed website to Netlify
+- Netify link (bongisfastfoods.netlify.app)
   
 ## [2026-09-12]
 - Changed a few words and pictures in about.html
