@@ -116,7 +116,7 @@ nav a {
     color: var(--black);
     text-decoration: none;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 16px;
     padding: 9px 10px;
     border-radius: 5px;
     transition: 0.3s;
@@ -200,7 +200,7 @@ nav a:hover {
 .site-search-status {
     margin: 0 0 6px;
     color: var(--dark-text);
-    font-size: 14px;
+    font-size: 24px;
     font-weight: bold;
 }
 
@@ -226,7 +226,7 @@ nav a:hover {
 .site-search-list p {
     margin: 3px 0 0;
     color: var(--muted);
-    font-size: 14px;
+    font-size: 24px;
     line-height: 1.5;
 }
 
@@ -268,7 +268,7 @@ h4 {
 p {
     color: var(--muted);
     margin-bottom: 20px;
-    font-size: 16px;
+    font-size: 28px;
     line-height: 1.8;
 }
 
@@ -669,7 +669,7 @@ section > div > div p {
     padding: 0;
     margin: 10px 0;
     text-align: left;
-    font-size: 15px;
+    font-size: 26px;
 }
 
 section > div > div p:last-child {
@@ -833,7 +833,7 @@ img {
 
 .order-eyebrow {
     color: var(--orange);
-    font-size: 12px;
+    font-size: 22px;
     font-weight: 800;
     letter-spacing: 1px;
 }
@@ -949,7 +949,7 @@ img {
 
 .menu-item-detail {
     margin: -5px 0 10px;
-    font-size: 12px;
+    font-size: 22px;
     line-height: 1.4;
 }
 
@@ -1033,7 +1033,7 @@ img {
 .delivery-note,
 .order-status {
     color: #e2ded5;
-    font-size: 13px;
+    font-size: 24px;
     line-height: 1.5;
 }
 
@@ -1110,7 +1110,7 @@ img {
 .order-basket .delivery-note {
     margin-bottom: 16px;
     color: #c9c5bd;
-    font-size: 12px;
+    font-size: 22px;
 }
 
 .order-fields {
@@ -1243,7 +1243,7 @@ img {
 
     header nav a {
         padding: 8px 9px;
-        font-size: 12px;
+        font-size: 14px;
     }
 }
 
@@ -1274,7 +1274,7 @@ img {
 
     header nav a {
         padding: 7px 8px;
-        font-size: 11px;
+        font-size: 13px;
     }
 }
 
