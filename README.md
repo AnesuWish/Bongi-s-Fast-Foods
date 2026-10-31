@@ -53,6 +53,18 @@ Domain name: R120 Website software: R180 per month Shared web hosting: R60 per m
 
 The project will be stored in a private GitHub repository.
 
+SEO
+### Off-Page SEO Implemented:
+- Backlinks: Will approach local food bloggers to link to our site
+- Social Media: Added Facebook and Instagram links in footer linking to business pages
+- Local SEO: Added business address "Johannesburg, Gauteng" and local keywords "food ordering Johannesburg"
+
+### Additional SEO:
+- robots.txt: Created to guide search engine crawlers
+- sitemap.xml: Created to help search engines understand site structure
+- Page Speed: Optimized images (compressed) and used minimal CSS/JS
+- Security: Website uses HTTPS via Netlify (automatic SSL certificate)
+
 Author Anesuishe Nyandoro
 Reference List
 1.	Haim, I, 2026. How Much Does It Cost to Build a Website in 2026? Element or Blog A Comprehensive Guide, [blog] 29 June. Available at: <https://elementor.com/blog/how-much-does-it-cost-to-build-a-website/> [Accessed 29 July 2026].
