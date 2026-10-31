@@ -121,6 +121,64 @@ searchForm.addEventListener('submit', (event) => {
 
 const orderMenu = document.querySelector('#order-menu');
 
+const serviceOptions = document.querySelector('#service-options');
+
+if (serviceOptions) {
+	const services = [
+		{ title: 'Drive-Thru', description: 'Swing by anytime for quick, hot, and delicious meals without the wait.' },
+		{ title: 'Counter Pickup', description: 'Order ahead and collect your favorites in minutes with no stress.' },
+		{ title: 'Event Catering', description: 'Perfect for birthdays, office lunches, family celebrations, and events.' },
+		{ title: 'Call & Collect', description: "Call ahead and we'll have your order ready when you arrive." },
+		{ title: 'Party Venue', description: 'Enjoy a lively, family-friendly venue for celebrations and gatherings.' },
+		{ title: 'Party Platters', description: 'Big-value platters packed with crowd-pleasing favorites for any event.' }
+	];
+	const serviceCards = document.createDocumentFragment();
+
+	services.forEach((service) => {
+		const card = document.createElement('article');
+		card.className = 'service-card';
+		const title = document.createElement('h3');
+		title.textContent = service.title;
+		const description = document.createElement('p');
+		description.textContent = service.description;
+		card.append(title, description);
+		serviceCards.append(card);
+	});
+
+	serviceOptions.replaceChildren(serviceCards);
+}
+
+const customerReviews = document.querySelector('#customer-reviews');
+
+if (customerReviews) {
+	const reviews = [
+		{ rating: 5, quote: 'The best burgers in town! Fast delivery and everything arrived piping hot.', author: 'Sipho M.' },
+		{ rating: 5, quote: "Bongi's secret sauce is incredible. My kids beg for these chips every Friday.", author: 'Amara K.' },
+		{ rating: 4, quote: 'Great value for money. The family meal deal easily feeds all of us.', author: 'David L.' }
+	];
+	const reviewCards = document.createDocumentFragment();
+
+	reviews.forEach((review) => {
+		const card = document.createElement('div');
+		card.className = 'review-card';
+		const rating = document.createElement('div');
+		rating.className = 'review-rating';
+		rating.setAttribute('role', 'img');
+		rating.setAttribute('aria-label', `Rating: ${review.rating} out of 5 stars`);
+		rating.textContent = `${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)}`;
+
+		const quote = document.createElement('p');
+		quote.textContent = `“${review.quote}”`;
+		const author = document.createElement('p');
+		author.className = 'review-author';
+		author.textContent = `- ${review.author}`;
+		card.append(rating, quote, author);
+		reviewCards.append(card);
+	});
+
+	customerReviews.replaceChildren(reviewCards);
+}
+
 if (orderMenu) {
 	const products = [
 		{ id: 'beef-burger', name: 'Beef Burger', category: 'Burgers', price: 45 },
@@ -445,10 +503,66 @@ document.querySelectorAll('form[action="submit_enquiry.php"]').forEach((form) =>
 	});
 });
 
-const faqSection = [...document.querySelectorAll('section')].find((section) => section.querySelector('details'));
+const faqList = document.querySelector('#faq-list');
 
-if (faqSection) {
-	const faqItems = [...faqSection.querySelectorAll('details')];
+if (faqList) {
+	const faqEntries = [
+		{
+			question: 'Do you offer home delivery?',
+			answer: "Yes! Bongi's delivers straight to your door through our delivery partners. Check our app to see if you are in our delivery zone."
+		},
+		{
+			question: 'Are there vegetarian or vegan options on the menu?',
+			answer: "Absolutely. We serve a delicious Bongi's Veggie Burger and our regular chips are 100% vegetarian-friendly."
+		},
+		{
+			question: "How can I apply to work at Bongi's?",
+			answer: 'You can check out our Careers page to view open positions, or send your CV directly to jobs@bongis.com.'
+		},
+		{
+			question: 'Do you cater for large parties or events?',
+			answer: 'Yes, we do! Please fill out our main enquiry form with your event details, guest count, and date, and we will get back to you with platter pricing.'
+		},
+		{
+			question: 'What are your payment methods?',
+			answer: 'We accept cash, all major credit and debit cards, mobile payments, and digital wallets like Apple Pay and Google Pay.'
+		},
+		{
+			question: 'Do you have allergen information available?',
+			answer: 'Yes, we maintain detailed allergen information for all menu items. Please ask our staff or check our website for a complete allergen guide.'
+		},
+		{
+			question: 'What is your return or refund policy?',
+			answer: 'If you are unsatisfied with your meal, we will remake it or offer a full refund. Your satisfaction is guaranteed!'
+		},
+		{
+			question: 'Do you offer loyalty programs or rewards?',
+			answer: 'Absolutely! Download our BurgerCraze mobile app to earn reward points on every purchase and access exclusive deals.'
+		},
+		{
+			question: 'What are your operating hours?',
+			answer: 'Monday-Thursday: 10:00 AM - 10:00 PM | Friday-Saturday: 8:00 AM - 12:00 AM | Sunday: 12:00 PM - 10:00 PM'
+		}
+	];
+	const faqFragment = document.createDocumentFragment();
+
+	faqEntries.forEach(({ question, answer }) => {
+		const item = document.createElement('details');
+		const summary = document.createElement('summary');
+		const questionText = document.createElement('strong');
+		const answerText = document.createElement('p');
+
+		questionText.textContent = question;
+		answerText.textContent = answer;
+		summary.append(questionText);
+		item.append(summary, answerText);
+		faqFragment.append(item);
+	});
+
+	faqList.replaceChildren(faqFragment);
+
+	const faqSection = faqList.closest('section');
+	const faqItems = [...faqList.querySelectorAll('details')];
 	const faqToggle = document.createElement('button');
 	faqToggle.className = 'faq-toggle';
 	faqToggle.type = 'button';
