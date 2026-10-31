@@ -48,17 +48,65 @@ body {
 
 /* Top header styling with a light warm gradient */
 header {
+    position: relative;
     background: linear-gradient(135deg, #fffaf4 0%, #b8f3ff 42%, #ffb3b3 72%, #fef0c9 100%);
-    padding: 20px;
+    padding: 18px 32px 28px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.brand {
+    position: absolute;
+    top: 18px;
+    left: 28px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--black);
+    font-size: 17px;
+    font-weight: 800;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.brand-logo {
+    width: 58px;
+    height: 58px;
+    margin: 0;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16);
+}
+
+header > h1 {
+    margin: 24px 0 8px;
+    font-size: 32px;
+}
+
+.header-tagline {
+    max-width: 880px;
+    margin: 0 auto 18px;
+    border: 0;
+    padding: 0;
+    color: var(--dark-text) !important;
+    text-align: center;
+}
+
+.header-foods-image {
+    width: min(100%, 1080px);
+    height: auto;
+    margin: 18px auto 0;
+    border-radius: 12px;
 }
 
 /* Navigation layout and link styling */
 nav {
     display: flex;
-    justify-content: center;
-    gap: 30px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    min-height: 58px;
+    padding-left: 230px;
     flex-wrap: wrap;
 }
 
@@ -67,8 +115,8 @@ nav a {
     color: var(--black);
     text-decoration: none;
     font-weight: bold;
-    font-size: 16px;
-    padding: 10px 15px;
+    font-size: 14px;
+    padding: 9px 10px;
     border-radius: 5px;
     transition: 0.3s;
 }
@@ -1158,4 +1206,9 @@ img {
     .order-basket {
         padding: 16px;
     }
+}
+
+header .site-search {
+    width: min(100%, 400px);
+    margin: 10px 0 0 auto;
 }
