@@ -368,6 +368,25 @@ if (orderMenu) {
 document.querySelectorAll('form[action="submit_enquiry.php"]').forEach((form) => {
 	form.noValidate = true;
 	const fields = [...form.querySelectorAll('input:not([type="submit"]), textarea')];
+	const textareas = fields.filter((field) => field.tagName === 'TEXTAREA');
+
+	textareas.forEach((textarea) => {
+		const characterCounter = document.createElement('span');
+		characterCounter.className = 'character-counter';
+		characterCounter.id = `${textarea.id}-counter`;
+		characterCounter.setAttribute('aria-live', 'off');
+		textarea.insertAdjacentElement('afterend', characterCounter);
+		textarea.setAttribute('aria-describedby', characterCounter.id);
+
+		function updateCharacterCounter() {
+			const remaining = textarea.maxLength - textarea.value.length;
+			characterCounter.textContent = `${textarea.value.length} / ${textarea.maxLength} characters`;
+			characterCounter.classList.toggle('is-near-limit', remaining <= 50);
+		}
+
+		textarea.addEventListener('input', updateCharacterCounter);
+		updateCharacterCounter();
+	});
 
 	function validateField(field) {
 		const value = field.value.trim();
@@ -399,9 +418,13 @@ document.querySelectorAll('form[action="submit_enquiry.php"]').forEach((form) =>
 		errorMessage.textContent = error;
 		field.setAttribute('aria-invalid', String(Boolean(error)));
 		if (error) {
-			field.setAttribute('aria-describedby', errorId);
+			const descriptionIds = new Set((field.getAttribute('aria-describedby') || '').split(/\s+/).filter(Boolean));
+			descriptionIds.add(errorId);
+			field.setAttribute('aria-describedby', [...descriptionIds].join(' '));
 		} else {
-			field.removeAttribute('aria-describedby');
+			const descriptionIds = (field.getAttribute('aria-describedby') || '').split(/\s+/).filter((id) => id && id !== errorId);
+			if (descriptionIds.length) field.setAttribute('aria-describedby', descriptionIds.join(' '));
+			else field.removeAttribute('aria-describedby');
 		}
 		return !error;
 	}
@@ -421,3 +444,46 @@ document.querySelectorAll('form[action="submit_enquiry.php"]').forEach((form) =>
 		}
 	});
 });
+
+const faqSection = [...document.querySelectorAll('section')].find((section) => section.querySelector('details'));
+
+if (faqSection) {
+	const faqItems = [...faqSection.querySelectorAll('details')];
+	const faqToggle = document.createElement('button');
+	faqToggle.className = 'faq-toggle';
+	faqToggle.type = 'button';
+	faqToggle.setAttribute('aria-expanded', 'false');
+	faqToggle.textContent = 'Expand all FAQs';
+	faqSection.querySelector('h2').insertAdjacentElement('afterend', faqToggle);
+
+	faqToggle.addEventListener('click', () => {
+		const expandAll = faqItems.some((item) => !item.open);
+		faqItems.forEach((item) => {
+			item.open = expandAll;
+		});
+		faqToggle.setAttribute('aria-expanded', String(expandAll));
+		faqToggle.textContent = expandAll ? 'Collapse all FAQs' : 'Expand all FAQs';
+	});
+}
+
+const backToTopButton = document.createElement('button');
+backToTopButton.className = 'back-to-top';
+backToTopButton.type = 'button';
+backToTopButton.setAttribute('aria-label', 'Back to top');
+backToTopButton.setAttribute('aria-hidden', 'true');
+backToTopButton.textContent = '↑';
+document.body.append(backToTopButton);
+
+function updateBackToTopButton() {
+	const isVisible = window.scrollY > 450;
+	backToTopButton.classList.toggle('is-visible', isVisible);
+	backToTopButton.setAttribute('aria-hidden', String(!isVisible));
+	backToTopButton.tabIndex = isVisible ? 0 : -1;
+}
+
+window.addEventListener('scroll', updateBackToTopButton, { passive: true });
+backToTopButton.addEventListener('click', () => {
+	const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+	window.scrollTo({ top: 0, behavior });
+});
+updateBackToTopButton();
