@@ -365,3 +365,59 @@ if (orderMenu) {
 	renderBasket();
 }
 
+document.querySelectorAll('form[action="submit_enquiry.php"]').forEach((form) => {
+	form.noValidate = true;
+	const fields = [...form.querySelectorAll('input:not([type="submit"]), textarea')];
+
+	function validateField(field) {
+		const value = field.value.trim();
+		const digits = value.replace(/\D/g, '');
+		let error = '';
+
+		if (field.required && !value) {
+			error = 'This field is required.';
+		} else if (field.type === 'email' && value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+			error = 'Enter a valid email address.';
+		} else if (field.type === 'tel' && value && (!/^[+\d\s().-]+$/.test(value) || digits.length < 7 || digits.length > 15)) {
+			error = 'Enter a valid phone number.';
+		} else if (['name', 'surname'].includes(field.name) && value && !/^[\p{L}][\p{L}\s'-]*$/u.test(value)) {
+			error = 'Use letters, spaces, apostrophes, or hyphens only.';
+		} else if (field.tagName === 'TEXTAREA' && value.length < 10) {
+			error = 'Please enter at least 10 characters.';
+		}
+
+		const errorId = `${field.id}-error`;
+		let errorMessage = form.querySelector(`#${CSS.escape(errorId)}`);
+		if (!errorMessage) {
+			errorMessage = document.createElement('span');
+			errorMessage.id = errorId;
+			errorMessage.className = 'field-error';
+			errorMessage.setAttribute('aria-live', 'polite');
+			field.insertAdjacentElement('afterend', errorMessage);
+		}
+
+		errorMessage.textContent = error;
+		field.setAttribute('aria-invalid', String(Boolean(error)));
+		if (error) {
+			field.setAttribute('aria-describedby', errorId);
+		} else {
+			field.removeAttribute('aria-describedby');
+		}
+		return !error;
+	}
+
+	fields.forEach((field) => {
+		field.addEventListener('blur', () => validateField(field));
+		field.addEventListener('input', () => {
+			if (field.hasAttribute('aria-invalid')) validateField(field);
+		});
+	});
+
+	form.addEventListener('submit', (event) => {
+		const invalidFields = fields.filter((field) => !validateField(field));
+		if (invalidFields.length) {
+			event.preventDefault();
+			invalidFields[0].focus();
+		}
+	});
+});
