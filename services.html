@@ -41,6 +41,73 @@
        
         <p>At BurgerCraze, we offer a variety of services to ensure that your dining experience is convenient, enjoyable, and satisfying. Our services include:</p>
 
+        <section class="order-menu" id="order-menu" aria-labelledby="order-menu-title">
+            <div class="order-menu-heading">
+                <div>
+                    <p class="order-eyebrow">BONGI'S MENU</p>
+                    <h2 id="order-menu-title">Build your order</h2>
+                    <p>Pick your favourites, add them to your basket, then review the order in WhatsApp.</p>
+                </div>
+                <a class="menu-poster-link" href="images/MENU.png">View menu poster</a>
+            </div>
+
+            <div class="order-layout">
+                <div class="menu-browser">
+                    <label class="visually-hidden" for="menu-search">Search menu items</label>
+                    <input class="menu-search" id="menu-search" type="search" placeholder="Find a menu item" autocomplete="off">
+                    <div class="menu-categories" role="group" aria-label="Filter by menu category">
+                        <button type="button" data-category="All" aria-pressed="true">All</button>
+                        <button type="button" data-category="Burgers" aria-pressed="false">Burgers</button>
+                        <button type="button" data-category="Chicken" aria-pressed="false">Chicken</button>
+                        <button type="button" data-category="Chips" aria-pressed="false">Chips</button>
+                        <button type="button" data-category="Meals" aria-pressed="false">Meals</button>
+                        <button type="button" data-category="Extras" aria-pressed="false">Extras</button>
+                        <button type="button" data-category="Drinks" aria-pressed="false">Drinks</button>
+                    </div>
+                    <div class="menu-grid" id="menu-items" aria-live="polite"></div>
+                    <p class="menu-empty" id="menu-empty" hidden>No menu items match that search.</p>
+                </div>
+
+                <aside class="order-basket" aria-labelledby="basket-title">
+                    <div class="basket-heading">
+                        <h3 id="basket-title">Your basket</h3>
+                        <span class="basket-count" id="basket-count">0</span>
+                        <button class="clear-basket" id="clear-basket" type="button" disabled>Clear</button>
+                    </div>
+                    <p class="basket-empty" id="basket-empty">Your basket is empty.</p>
+                    <ul class="basket-items" id="basket-items"></ul>
+                    <div class="basket-subtotal">
+                        <span>Subtotal</span>
+                        <strong id="basket-total">R0</strong>
+                    </div>
+                    <p class="delivery-note">Delivery fee is confirmed on WhatsApp. No payment is taken on this website.</p>
+
+                    <div class="order-fields">
+                        <label for="customer-name">Your name
+                            <input id="customer-name" type="text" autocomplete="name">
+                        </label>
+                        <label for="order-type">Order type
+                            <select id="order-type">
+                                <option value="Pickup">Pickup</option>
+                                <option value="Delivery">Delivery</option>
+                            </select>
+                        </label>
+                        <div class="delivery-address-field" id="delivery-address-field" hidden>
+                            <label for="delivery-address">Delivery address
+                                <input id="delivery-address" type="text" autocomplete="street-address">
+                            </label>
+                        </div>
+                        <label for="order-notes">Notes (optional)
+                            <textarea id="order-notes" rows="2"></textarea>
+                        </label>
+                    </div>
+
+                    <a class="whatsapp-checkout" id="whatsapp-checkout" href="#order-menu" target="_blank" rel="noopener">Review order on WhatsApp</a>
+                    <p class="order-status" id="order-status" role="status" aria-live="polite"></p>
+                </aside>
+            </div>
+        </section>
+
         <div class="service-grid">
             <div class="service-card">
                 <h3>Drive-Thru</h3>
@@ -94,7 +161,7 @@
             </div>
         </section>
 
-        <p class="menu-link"><a href="images/MENU.png">Click here to view our August Menu</a></p>
+        <p class="menu-link"><a href="images/MENU.png">Open the full menu poster</a></p>
     </main>
 
     <!-- Footer with operating hours and copyright -->
