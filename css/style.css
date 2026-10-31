@@ -63,7 +63,8 @@ header {
     align-items: center;
     gap: 10px;
     color: var(--black);
-    font-size: 20px;
+    font-size: 48px;
+    line-height: 1.05;
     font-weight: 800;
     text-align: left;
     white-space: nowrap;
@@ -1208,7 +1209,7 @@ img {
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
     header {
         padding: 18px 18px 24px;
     }
@@ -1248,12 +1249,22 @@ img {
 
 @media (max-width: 480px) {
     .brand {
-        font-size: 17px;
+        width: 100%;
+        max-width: 360px;
+        gap: 8px;
+        font-size: 40px;
+    }
+
+    .brand span {
+        max-width: 190px;
+        white-space: normal;
+        line-height: 1.05;
     }
 
     .brand-logo {
         width: 136px;
         height: 136px;
+        flex: 0 0 136px;
     }
 
     header nav {
@@ -1270,4 +1281,15 @@ img {
 header .site-search {
     width: min(100%, 400px);
     margin: 10px 0 0 auto;
+}
+
+@media (max-width: 340px) {
+    .brand {
+        flex-direction: column;
+    }
+
+    .brand span {
+        max-width: 100%;
+        text-align: center;
+    }
 }
