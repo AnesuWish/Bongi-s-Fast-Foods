@@ -84,22 +84,6 @@ header > h1 {
     font-size: 32px;
 }
 
-.header-tagline {
-    max-width: 880px;
-    margin: 0 auto 18px;
-    border: 0;
-    padding: 0;
-    color: var(--dark-text) !important;
-    text-align: center;
-}
-
-.header-foods-image {
-    width: min(100%, 1080px);
-    height: auto;
-    margin: 18px auto 0;
-    border-radius: 12px;
-}
-
 /* Navigation layout and link styling */
 nav {
     display: flex;
@@ -116,7 +100,7 @@ nav a {
     color: var(--black);
     text-decoration: none;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 29px;
     padding: 9px 10px;
     border-radius: 5px;
     transition: 0.3s;
@@ -1243,7 +1227,7 @@ img {
 
     header nav a {
         padding: 8px 9px;
-        font-size: 14px;
+        font-size: 29px;
     }
 }
 
@@ -1274,13 +1258,13 @@ img {
 
     header nav a {
         padding: 7px 8px;
-        font-size: 13px;
+        font-size: 29px;
     }
 }
 
 header .site-search {
     width: min(100%, 400px);
-    margin: 10px 0 0 auto;
+    margin: 24px 0 0 auto;
 }
 
 @media (max-width: 340px) {
