@@ -508,7 +508,7 @@ document.querySelectorAll('form[data-email-form]').forEach((form) => {
 		const customerName = form.querySelector('[name="name"]')?.value.trim() || 'Website visitor';
 		const subject = `${form.dataset.emailSubject} from ${customerName}`;
 		const body = fields.map((field) => `${field.name}: ${field.value.trim()}`).join('\n');
-		const emailUrl = `mailto:info@bongisfoods.com?${new URLSearchParams({ subject, body })}`;
+		const emailUrl = `mailto:info@bongisfoods.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 		window.location.href = emailUrl;
 	});
 });
