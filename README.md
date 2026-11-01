@@ -65,6 +65,17 @@ SEO
 - Page Speed: Optimized images (compressed) and used minimal CSS/JS
 - Security: Website uses HTTPS via Netlify (automatic SSL certificate)
 
+### Page Speed Optimisation Implemented:
+- Compressed all images using TinyPNG to reduce file size
+- Implemented lazy loading for gallery and store images
+- Minified CSS and JavaScript files
+- Optimized for mobile with viewport meta tag
+
+### Security Measures Implemented:
+- HTTPS enabled via Netlify free SSL certificate (site uses https://)
+- Form input validation and sanitization using JavaScript (.trim() and regex) to prevent XSS attacks
+- No sensitive data stored in frontend code
+- robots.txt prevents crawling of sensitive areas
 Author Anesuishe Nyandoro
 Reference List
 1.	Haim, I, 2026. How Much Does It Cost to Build a Website in 2026? Element or Blog A Comprehensive Guide, [blog] 29 June. Available at: <https://elementor.com/blog/how-much-does-it-cost-to-build-a-website/> [Accessed 29 July 2026].
