@@ -21,33 +21,6 @@
             <a href="contact.html">CONTACT US</a>
             <a href="enquiry.html">ENQUIRIES</a>
         </nav>
-               <form class="site-search" role="search">
-            <label class="visually-hidden" for="site-search-input">Search this website</label>
-            <div class="site-search-controls">
-                <input id="site-search-input" type="search" placeholder="Search the site" autocomplete="off" maxlength="100">
-                <button type="submit">Search</button>
-            </div>
-            <div class="site-search-results" id="site-search-results" aria-live="polite"></div>
-        </form>
-          <form id="contactForm" data-email-form data-email-subject="Contact message">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required><br><br>
-
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required><br><br>
-
-      <label for="msgType">Type of Message:</label>
-      <select id="msgType" name="message type" required>
-    <option value="General Enquiry">General Enquiry</option>
-    <option value="Complaint">Complaint</option>
-    <option value="Feedback">Feedback</option>
-  </select><br><br>
-
-    <label for="message">Full Message:</label>
-    <textarea id="message" name="message" rows="5" required></textarea><br><br>
-
-  <button type="submit">Send Email</button>
-</form>
         <form class="site-search" role="search">
             <label class="visually-hidden" for="site-search-input">Search this website</label>
             <div class="site-search-controls">
@@ -72,6 +45,26 @@
             <li>Email: info@bongisfoods.com</li>
             <li>Address: 21 Bass Street, Boksburg, South Africa</li>
         </ul>
+
+        <form id="contactForm" data-email-form data-email-subject="Contact message">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="msgType">Type of Message:</label>
+            <select id="msgType" name="message type" required>
+                <option value="General Enquiry">General Enquiry</option>
+                <option value="Complaint">Complaint</option>
+                <option value="Feedback">Feedback</option>
+            </select><br><br>
+
+            <label for="message">Full Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+            <button type="submit">Send Email</button>
+        </form>
 
 
         <!-- Location section with embedded Google map iframe -->
