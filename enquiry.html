@@ -36,23 +36,17 @@
         <h2>Enquiries</h2>
         <p>If you have any questions, comments, or special requests, please don't hesitate to reach out to us. We value your feedback and are here to assist you in any way we can.</p>
 
-        <!DOCTYPE html>
-<html>
-<head><title>Enquiry</title></head>
-<body>
-<h1>Product Enquiry</h1>
-
-<form id="enquiryForm">
-  <label>Name:</label>
-  <input type="text" id="enqName">
+          <form id="enquiryForm" data-email-form data-email-subject="Product enquiry">
+        <label for="enqName">Name:</label>
+        <input type="text" id="enqName" name="name" required>
   <span id="enqNameError" style="color:red"></span><br><br>
 
-  <label>Email:</label>
-  <input type="text" id="enqEmail">
+        <label for="enqEmail">Email:</label>
+        <input type="email" id="enqEmail" name="email" required>
   <span id="enqEmailError" style="color:red"></span><br><br>
 
-  <label>What do you want to enquire about?</label>
-  <select id="enqType">
+        <label for="enqType">What do you want to enquire about?</label>
+        <select id="enqType" name="enquiry type" required>
     <option value="">--Select--</option>
     <option value="product">Food Products</option>
     <option value="service">Catering Service</option>
@@ -63,43 +57,12 @@
   </select>
   <span id="enqTypeError" style="color:red"></span><br><br>
 
-  <label>Message:</label>
-  <textarea id="enqMessage"></textarea><br><br>
+  <label for="enqMessage">Message:</label>
+  <textarea id="enqMessage" name="message" required minlength="10"></textarea><br><br>
 
   <button type="submit">Submit Enquiry</button>
 </form>
 
-<div id="enquiryResponse" style="margin-top:20px; background:#e0ffe0; padding:15px; display:none;"></div>
-
-<script>
-document.getElementById('enquiryForm').addEventListener('submit', function(e){
-  e.preventDefault();
-  let valid = true;
-  const name = document.getElementById('enqName').value.trim();
-  const email = document.getElementById('enqEmail').value.trim();
-  const type = document.getElementById('enqType').value;
-  
-  // Clear errors
-  document.getElementById('enqNameError').textContent='';
-  document.getElementById('enqEmailError').textContent='';
-  document.getElementById('enqTypeError').textContent='';
-
-  if(name===''){document.getElementById('enqNameError').textContent='Required'; valid=false;}
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){document.getElementById('enqEmailError').textContent='Valid email required'; valid=false;}
-  if(type===''){document.getElementById('enqTypeError').textContent='Select a type'; valid=false;}
-
-  if(valid){
-    const responseDiv = document.getElementById('enquiryResponse');
-    responseDiv.style.display='block';
-    // This is the "processing and present response related to cost/availability"
-    if(type==='product') responseDiv.innerHTML=`Thank you ${name}! Our food products start from R50. Available daily 9am-9pm. We will email you at ${email}.`;
-    if(type==='service') responseDiv.innerHTML=`Thank you ${name}! Catering costs R500 per event. Available on weekends. Team will contact you.`;
-    if(type==='sponsor') responseDiv.innerHTML=`Thank you ${name}! Sponsorship from R1000/month. Great exposure. We will send details to ${email}.`;
-  }
-});
-</script>
-</body>
-</html>
       
         <section>
             <br>

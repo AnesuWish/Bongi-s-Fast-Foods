@@ -423,10 +423,10 @@ if (orderMenu) {
 	renderBasket();
 }
 
-document.querySelectorAll('form[action="submit_enquiry.php"]').forEach((form) => {
+document.querySelectorAll('form[data-email-form]').forEach((form) => {
 	form.noValidate = true;
-	const fields = [...form.querySelectorAll('input:not([type="submit"]), textarea')];
-	const textareas = fields.filter((field) => field.tagName === 'TEXTAREA');
+	const fields = [...form.querySelectorAll('input:not([type="submit"]), textarea, select')];
+	const textareas = fields.filter((field) => field.tagName === 'TEXTAREA' && field.maxLength >= 0);
 
 	textareas.forEach((textarea) => {
 		const characterCounter = document.createElement('span');
@@ -499,7 +499,15 @@ document.querySelectorAll('form[action="submit_enquiry.php"]').forEach((form) =>
 		if (invalidFields.length) {
 			event.preventDefault();
 			invalidFields[0].focus();
+			return;
 		}
+
+		event.preventDefault();
+		const customerName = form.querySelector('[name="name"]')?.value.trim() || 'Website visitor';
+		const subject = `${form.dataset.emailSubject} from ${customerName}`;
+		const body = fields.map((field) => `${field.name}: ${field.value.trim()}`).join('\n');
+		const emailUrl = `mailto:info@bongisfoods.com?${new URLSearchParams({ subject, body })}`;
+		window.location.href = emailUrl;
 	});
 });
 
