@@ -29,6 +29,44 @@
             </div>
             <div class="site-search-results" id="site-search-results" aria-live="polite"></div>
         </form>
+        <form id="contactForm">
+  <label>Name:</label>
+  <input type="text" id="name"><br><br>
+
+  <label>Email:</label>
+  <input type="text" id="email"><br><br>
+
+  <label>Type of Message:</label>
+  <select id="msgType">
+    <option value="General Enquiry">General Enquiry</option>
+    <option value="Complaint">Complaint</option>
+    <option value="Feedback">Feedback</option>
+  </select><br><br>
+
+  <label>Full Message:</label>
+  <textarea id="message" rows="5"></textarea><br><br>
+
+  <button type="submit">Send Email</button>
+</form>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const type = document.getElementById('msgType').value;
+  const msg = document.getElementById('message').value.trim();
+
+  if(name==='' || email==='' || msg===''){ alert('Fill all fields'); return;}
+
+  
+  const subject = type + ' from ' + name;
+  const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0AType: ${type}%0D%0AMessage: ${msg}`;
+  
+ 
+  window.location.href = `mailto:info@bongisfoods.com?subject=${subject}&body=${body}`;
+});
+</script>
         <h1>Bongi's Fast Food Services</h1>
     </header>
     <br>
