@@ -56,7 +56,7 @@ const searchPages = [
 	{
 		title: 'Contact Us',
 		href: 'contact.html',
-		content: "Contact Bongi's Fast Food. Phone +27 11 765 7890, WhatsApp +27 11 456 7890, Facebook, email info@bongisfoods.com, address 21 Bass Street, Boksburg, orders, location, map."
+		content: "Contact Bongi's Fast Food. Phone +27 11 765 7890, WhatsApp +27 73 865 5098, Facebook, email info@bongisfoods.com, address 21 Bass Street, Boksburg, orders, location, map."
 	},
 	{
 		title: 'Enquiries and FAQs',
@@ -415,7 +415,7 @@ if (orderMenu) {
 			...(orderType.value === 'Delivery' ? [`Address: ${deliveryAddress}`, 'Please confirm the delivery fee.'] : []),
 			...(notes ? [`Notes: ${notes}`] : [])
 		].join('\n');
-		checkoutLink.href = `https://wa.me/27114567890?text=${encodeURIComponent(message)}`;
+		checkoutLink.href = `https://wa.me/27738655098?text=${encodeURIComponent(message)}`;
 		orderStatus.textContent = 'Your order draft is ready to review in WhatsApp.';
 	});
 
