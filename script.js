@@ -35,6 +35,7 @@ lightbox.addEventListener('click', (event) => {
 });
 
 const searchForm = document.querySelector('.site-search');
+if (searchForm) {
 const searchInput = searchForm.querySelector('input[type="search"]');
 const searchResults = searchForm.querySelector('.site-search-results');
 const searchPages = [
@@ -118,6 +119,7 @@ searchForm.addEventListener('submit', (event) => {
 	});
 	searchResults.append(list);
 });
+}
 
 const orderMenu = document.querySelector('#order-menu');
 
